@@ -17,14 +17,6 @@ MainWindow::~MainWindow()
 static QString num1, num2;
 static QString operation = "";
 
-//void numberInput(QString value){
-//    if(operation != ""){
-//        num1 += value;  // wszystko co jest przed operatorem
-//    } else {
-//        num2 += value;  // wszystko co jest za operatorem
-//    }
-//}
-
 void MainWindow::on_btn1_clicked()
 {
     ui->result->setText(ui->result->text() + "1");
@@ -160,11 +152,14 @@ void MainWindow::on_btnEquals_clicked()
         int res = num1.toInt() + num2.toInt();
         ui->result->setText(ui->result->text() + "=" + QString::number(res));
     } else if (operation == "-"){
-
+        int res = num1.toInt() - num2.toInt();
+        ui->result->setText(ui->result->text() + "=" + QString::number(res));
     } else if (operation == "*"){
-
+        int res = num1.toInt() * num2.toInt();
+        ui->result->setText(ui->result->text() + "=" + QString::number(res));
     } else if (operation == "/"){
-
+        double res = num1.toDouble() / num2.toInt();
+        ui->result->setText(ui->result->text() + "=" + QString::number(res));
     } else {
         ui->result->setText("ERROR");
     }
