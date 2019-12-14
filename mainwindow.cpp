@@ -120,6 +120,27 @@ void MainWindow::on_btn0_clicked()
 void MainWindow::on_btnClear_clicked()
 {
     ui->result->clear();
+    // wyczyszczenie pól num1 num2
+    num1 = "";
+    num2 = "";
+    operation = "";
+    // odblokowanie przycisków
+    ui->btn0->setDisabled(false);
+    ui->btn1->setDisabled(false);
+    ui->btn2->setDisabled(false);
+    ui->btn3->setDisabled(false);
+    ui->btn4->setDisabled(false);
+    ui->btn5->setDisabled(false);
+    ui->btn6->setDisabled(false);
+    ui->btn7->setDisabled(false);
+    ui->btn8->setDisabled(false);
+    ui->btn9->setDisabled(false);
+    ui->btnPlus->setDisabled(false);
+    ui->btnMinus->setDisabled(false);
+    ui->btnMultiply->setDisabled(false);
+    ui->btnDiv->setDisabled(false);
+    ui->btnEquals->setDisabled(false);
+
 }
 
 void MainWindow::on_btnPlus_clicked()
@@ -163,4 +184,20 @@ void MainWindow::on_btnEquals_clicked()
     } else {
         ui->result->setText("ERROR");
     }
+    // blokuje wszytkie przyciski poza CLEAR
+    ui->btn0->setDisabled(true);
+    ui->btn1->setDisabled(true);
+    ui->btn2->setDisabled(true);
+    ui->btn3->setDisabled(true);
+    ui->btn4->setDisabled(true);
+    ui->btn5->setDisabled(true);
+    ui->btn6->setDisabled(true);
+    ui->btn7->setDisabled(true);
+    ui->btn8->setDisabled(true);
+    ui->btn9->setDisabled(true);
+    ui->btnPlus->setDisabled(true);
+    ui->btnMinus->setDisabled(true);
+    ui->btnMultiply->setDisabled(true);
+    ui->btnDiv->setDisabled(true);
+    ui->btnEquals->setDisabled(true);
 }
